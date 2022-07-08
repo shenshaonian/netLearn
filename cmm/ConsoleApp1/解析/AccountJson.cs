@@ -36,7 +36,9 @@ namespace ConsoleApp1.解析
             //DCollectionJson();
             //DDictionaryJson();
             //DAnAnonymousTypeJson();
-            DDataSetJson();
+            //DDataSetJson();
+
+            DJSONFromFileJson();
         }
 
         #region object2json-demoAccountJson()
@@ -404,10 +406,33 @@ namespace ConsoleApp1.解析
         }
         #endregion
 
-        #region 
+
+        #region Deserialize JSON from a file--DJSONFromFileJson
+        public static void DJSONFromFileJson()
+        {
+            // read file into a string and deserialize JSON to a type
+            try
+            {
+                Movie movie1 = JsonConvert.DeserializeObject<Movie>(File.ReadAllText(@"C:\Users\HB\Desktop\Fzq\test\gitct\cmm\ConsoleApp1\movie.json"));
+                Console.WriteLine(movie1.Year);
+                // deserialize JSON directly from a file
+                using (StreamReader file = File.OpenText(@"C:\Users\HB\Desktop\Fzq\test\gitct\cmm\ConsoleApp1\movie.json"))
+                {
+                    JsonSerializer serializer = new JsonSerializer();
+                    Movie movie2 = (Movie)serializer.Deserialize(file, typeof(Movie));
+                    Console.WriteLine(movie2.Name);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("----");
+            }
+        }
+        #endregion
+        #region -https://www.newtonsoft.com/json/help/html/DeserializeWithJsonSerializerFromFile.htm
         public static void demoJson()
         {
-
+           
         }
         #endregion
 

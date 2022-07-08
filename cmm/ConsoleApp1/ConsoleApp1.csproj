@@ -3,7 +3,7 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <StartupObject>ConsoleApp1.解析.AccountJson</StartupObject>
+    <StartupObject>ConsoleApp1.基础.数组.ListTestLearn</StartupObject>
   </PropertyGroup>
 
   <ItemGroup>

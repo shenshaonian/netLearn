@@ -1,0 +1,25 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Diagnostics;
+using System.Text;
+
+
+///  json解析,简单学习
+namespace ConsoleApp1.解析
+{
+    public partial class ex: Component
+    {    
+        public ex()
+        {
+            InitializeComponent();
+        }
+
+        public ex(IContainer container)
+        {
+            container.Add(this);
+
+            InitializeComponent();
+        }
+    }
+}
